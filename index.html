@@ -10,38 +10,57 @@
   </head>
   <body>
 
-    <div class="container">
+    <section id="home">
 
-      <div id="logo">
-        <h1>Craig Robson</h1>
-        <h2>Web developer / designer / master / whatever&hellip;</h2>
-      </div>
+      <div class="container">
 
-      <div id="portfolio-feature">
-        <h3>I make <span>something?</span> that make people smile.</h3>
-
-        <div id="feature-slider">
-          <div class="carousel slide">
-            <div class="carousel-inner">
-              <div class="item active">
-                <img src="//lorempixel.com/300/300" />
-              </div>
-
-              <div class="item">
-                <img src="//lorempixel.com/300/300" />
-              </div>
-
-              <div class="item">
-                <img src="//lorempixel.com/300/300" />
-              </div>
-            </div>
-          </div>
+        <div id="logo">
+          <h1>Craig Robson</h1>
+          <h2>Web developer / designer / master / whatever&hellip;</h2>
         </div>
 
-        <p>Take a look at <a href="#portfolio">examples of my work</a> to see how I can help you.</p>
+        <div id="portfolio-feature">
+          <h3>I make <span>something?</span> that make people smile.</h3>
+
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+              <div id="feature-slider">
+                <div class="carousel slide">
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img src="//lorempixel.com/900/600" class="img-responsive" />
+                    </div>
+
+                    <div class="item">
+                      <img src="//lorempixel.com/900/600" class="img-responsive" />
+                    </div>
+
+                    <div class="item">
+                      <img src="//lorempixel.com/900/600" class="img-responsive" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <p>Take a look at <a href="#portfolio">examples of my work</a> to see how I can help you.</p>
+        </div>
+
       </div>
 
-    </div>
+    </section>
+
+    <section id="portfolio">
+      portfolio
+    </section>
+
+
+    <section id="about">
+      about
+    </section>
 
     <script src="static/js/jquery.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
@@ -63,7 +82,7 @@
             el.text(strings[Math.random() * strings.length]);
             el.slideDown(1000);
           });
-        }, 1000);
+        }, 3500);
 
         $('.carousel').carousel();
 

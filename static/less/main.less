@@ -1,5 +1,5 @@
 @import "../css/bootstrap.min.css";
-@import "../css/font-awesome.min.css";
+// @import "../css/font-awesome.min.css";
 @import "//fonts.googleapis.com/css?family=Open+Sans";
 
 // Some mixins
@@ -30,14 +30,22 @@
 // Off we go.
 
 html, body {
-  margin-bottom: 0.1em;
-  min-height: 100.1%;
+  height: 100%;
 }
 
 body {
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #333;
   font-family: "Open Sans", san-serif;
+}
+
+section {
+  min-height: 100%;
+
+  &#home {
+    background-color: #333;
+    color: #fff;
+  }
 }
 
 #logo {
@@ -72,4 +80,9 @@ body {
       color: red;
     }
   }
+
+  #feature-slider {
+    margin-bottom: 1em;
+  }
+
 }
