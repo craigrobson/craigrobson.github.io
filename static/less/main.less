@@ -1,1 +1,41 @@
-//
+@import "../css/bootstrap.min.css";
+@import "../css/font-awesome.min.css";
+@import "//fonts.googleapis.com/css?family=Open+Sans";
+
+// Some mixins
+// ==========================
+.cf() {
+  &:after,
+  &:before {
+    content: ' ';
+    display: table
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.mp(@margin, @padding) {
+  margin: @m;
+  padding: @p;
+}
+
+
+// Variables
+@t: transparent;
+@i: !important;
+
+
+
+// Off we go.
+
+html, body {
+  margin-bottom: 0.1em;
+  min-height: 100.1%;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Open Sans", san-serif;
+}
