@@ -17,6 +17,11 @@
         <h2>Web developer / designer / master / whatever&hellip;</h2>
       </div>
 
+      <div id="portfolio-feature">
+        <h3>I make <span>something?</span> that make people smile.</h3>
+        <p>Take a look at examples of my work to see how I can help you.</p>
+      </div>
+
     </div>
 
     <script src="static/js/jquery.min.js"></script>
@@ -24,6 +29,26 @@
     <script>
       $(function() {
         //alert($.fn.jquery);
+
+        var el = $('#portfolio-feature span');
+
+        var strings = [
+          'Websites',
+          'Logos',
+          'Stationary',
+          'Flash Animations'
+        ];
+
+        setInterval(function() {
+          el.slideUp('slow', function() {
+            el.text(strings[Math.random() * strings.length]);
+            el.slideDown('slow');
+          });
+        }, 1000);
+
+
+
+
       });
     </script>
   </body>
