@@ -1,0 +1,31 @@
+// Settings to change Foundation
+$global-width: 900px;
+$header-styles: (
+  small: (
+    'h1': ('font-size': 24),
+    'h2': ('font-size': 20),
+    'h3': ('font-size': 19),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 17),
+    'h6': ('font-size': 16),
+  ),
+  medium: (
+    'h1': ('font-size': 24),
+    'h2': ('font-size': 22),
+    'h3': ('font-size': 20),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 17),
+    'h6': ('font-size': 16),
+  ),
+);
+
+
+@import "foundation";
+@include foundation-global-styles;
+@include foundation-typography;
+@include foundation-xy-grid-classes;
+
+.wrapper {
+  width: 100%;
+  max-width: $global-width;
+  margin: $global-margin auto; }
