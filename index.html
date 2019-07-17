@@ -9,11 +9,27 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="theme-color" content="#4e8ef7">
+    <style>
+      .ios-prompt {
+        background-color: #fcfcfc;
+        border: 1px solid #666;
+        display: none;
+        padding: 0.8rem 1rem 0 0.5rem;
+        text-decoration: none;
+        font-size: 16px;
+        color: #555;
+        position: absolute;
+        margin: 0 auto 1rem;
+        left: 1rem;
+        right: 1rem;
+        bottom: 0;
+      }
+    </style>
   </head>
   <body>
 
   <button type="button" class="add2hsBtn" style="display: none;">Install Web App</button>
-  <div class="ios-prompt" style="display: none;">
+  <div class="ios-prompt">
     You can install this app on your home screen. Press the icon and click "add to home screen"
   </div>
 
