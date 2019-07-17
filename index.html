@@ -46,11 +46,13 @@
                 });
 
 
-                function addToHomeScreen(event) {
-                  event.preventDefault();
-                  deferredPrompt = event;
-                  deferredPrompt.prompt();
+                function addToHomeScreen() {
+                  var add2hs = document.querySelector('.a2hs-btn');
                 }
+
+        window.addEventListener("onbeforeinstallprompt", function(event) {
+          alert('onbeforeinstallprompt' + event);
+        });
 
       }
     </script>
