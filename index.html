@@ -16,43 +16,48 @@
         })
                 .then((registration) => {
                   alert('Service worker registered:' + registration.scope);
+                  let deferredPrompt;
+                  window.addEventListener('beforeinstallprompt', function(e) {
+                    alert('beforeinstallprompt');
+                    e.preventDefault();
+                    deferredPrompt = e;
+
+                    var add2hs = document.querySelector('.a2hs-btn');
+                    add2hs.style.display = 'block';
+
+                    add2hs.addEventListener('click', function() {
+                      alert('clicked');
+                      add2hs.style.display = 'none';
+                      deferredPrompt.prompt().then(() => {
+                        console.log('Prompt shown')
+                      })
+                              .catch((error) => {
+                                console.log('Prompt error: ', error);
+                              });
+
+                      deferredPrompt.userChoice
+                              .then((result) => {
+                                if(result.outcome === 'accepted') {
+                                  console.log('User accepted the prompt')
+                                }
+                                else {
+                                  console.log('User dismissed the prompt')
+                                }
+                                deferredPrompt = null;
+                              })
+                    });
+
+                  });
+
+
+                  window.addEventListener('fetch', function(event) {
+                    alert('fetched: ' + event);
+                  })
                 })
                 .catch((error) => {
                   alert('Service worker failed:' + error);
                 });
 
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', function(e) {
-          alert('beforeinstallprompt');
-          e.preventDefault();
-          deferredPrompt = e;
-
-          var add2hs = document.querySelector('.a2hs-btn');
-          add2hs.style.display = 'block';
-
-          add2hs.addEventListener('click', function() {
-            alert('clicked');
-            add2hs.style.display = 'none';
-            deferredPrompt.prompt().then(() => {
-              console.log('Prompt shown')
-            })
-                    .catch((error) => {
-                      console.log('Prompt error: ', error);
-                    });
-
-            deferredPrompt.userChoice
-                    .then((result) => {
-                      if(result.outcome === 'accepted') {
-                        console.log('User accepted the prompt')
-                      }
-                      else {
-                        console.log('User dismissed the prompt')
-                      }
-                      deferredPrompt = null;
-                    })
-          });
-
-        })
       }
     </script>
   </body>
