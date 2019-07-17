@@ -1,9 +1,9 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
 if (workbox) {
-    console.log(`Yay! Workbox is loaded 🎉`);
+    alert(`Yay! Workbox is loaded 🎉`);
 } else {
-    console.log(`Boo! Workbox didn't load 😬`);
+    alert(`Boo! Workbox didn't load 😬`);
 }
 
 workbox.setConfig({ debug: true })
@@ -12,13 +12,13 @@ workbox.setConfig({ debug: true })
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
 workbox.routing.registerRoute(
     /^https:\/\/fonts\.googleapis\.com/,
-    workbox.strategies.StaleWhileRevalidate({ cacheName: 'google-fonts-stylesheets' })
+    workbox.strategies.staleWhileRevalidate({ cacheName: 'google-fonts-stylesheets' })
 )
 
 // Cache the underlying font files with a cache-first strategy for 1 year.
 workbox.routing.registerRoute(
     /^https:\/\/fonts\.gstatic\.com/,
-    workbox.strategies.CacheFirst({
+    workbox.strategies.cacheFirst({
         cacheName: 'google-fonts-webfonts',
         plugins  : [
             new workbox.cacheableResponse.Plugin({ statuses: [0, 200] }),
@@ -29,3 +29,8 @@ workbox.routing.registerRoute(
         ],
     })
 )
+
+workbox.precaching.precacheAndRoute([
+    {url: '/', revision: '1234'},
+    // ... other entries ...
+]);
