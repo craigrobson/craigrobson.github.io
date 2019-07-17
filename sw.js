@@ -1,9 +1,9 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
 if (workbox) {
-    alert(`Yay! Workbox is loaded 🎉`);
+    console.log(`Yay! Workbox is loaded 🎉`);
 } else {
-    alert(`Boo! Workbox didn't load 😬`);
+    console.log(`Boo! Workbox didn't load 😬`);
 }
 
 workbox.setConfig({ debug: true })
