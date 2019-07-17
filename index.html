@@ -54,10 +54,11 @@
                   });
 
                   add2hs.addEventListener('click', function() {
-                    alert('clicked the button!!!!!!!')
+                    alert('clicked the button!!!!!!!');
+                    deferredPrompt.prompt();
                   });
 
-                  
+
                   window.addEventListener('fetch', function(event) {
                     alert('fetched: ' + event);
                   })
@@ -65,6 +66,13 @@
                 .catch((error) => {
                   alert('Service worker failed:' + error);
                 });
+
+
+                function addToHomeScreen(event) {
+                  event.preventDefault();
+                  deferredPrompt = event;
+
+                }
 
       }
     </script>
