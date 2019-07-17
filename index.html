@@ -53,13 +53,10 @@
     <p style="margin-top: -3px; line-height: 1.3rem;">To install this Web App in your iPhone/iPad press <img src="assets/imgs/share.svg" style="display: inline-block; margin-top: 4px; margin-bottom: -4px; height: 20px; width: auto;"> and then Add to Home Screen.</p>
   </div>
 
-  <script type="text/javascript" src="runtime.js"></script>
-  <script type="text/javascript" src="polyfills.js"></script>
-  <script type="text/javascript" src="main.js"></script>
 
   <script type="text/javascript">
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
+      navigator.serviceWorker.register('sw.js')
               .then(() => console.log('service worker installed'))
               .catch(err => console.error('Error', err));
     }
