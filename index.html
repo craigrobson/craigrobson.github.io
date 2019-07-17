@@ -4,20 +4,16 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Craig Robson</title>
-    <link rel="stylesheet" href="css/style.min.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <div class="grid-x">
-        <div class="small-12 cell">
-          <h1>Craig Robson</h1>
-          <h2>Web developer / designer / master / whatever&hellip;</h2>
-        </div>
-      </div>
-    </div>
-
-    <script src="js/vendors.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
   </body>
 </html>
