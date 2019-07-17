@@ -8,14 +8,19 @@
   "scope": ".",
   "icons": [
     {
-      "src": "/images/icons-192.png",
+      "src": "/icons/app-icon-48x48.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "48x48"
     },
     {
-      "src": "/images/icons-192.png",
+      "src": "/icons/app-icon-96x96.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "96x96"
+    },
+    {
+      "src": "/icons/app-icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
     }
   ]
 }
