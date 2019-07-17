@@ -7,7 +7,7 @@
     <link rel="manifest" href="manifest.json" />
   </head>
   <body>
-    <a href="#" class="a2hs-btn" style="display: none;">Add to Home</a>
+    <a href="#" class="a2hs-btn">Add to Home</a>
     <script>
       // Check that service workers are supported
       if ('serviceWorker' in navigator) {
@@ -21,7 +21,7 @@
 
         let deferredPrompt;
         window.addEventListener('beforeinstallprompt', function(e) {
-          console.log('beforeinstallprompt');
+          alert('beforeinstallprompt');
           e.preventDefault();
           deferredPrompt = e;
 
