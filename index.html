@@ -19,13 +19,14 @@
         })
                 .then((registration) => {
                   alert('Service worker registered:' + registration.scope);
+                  var add2hs = document.querySelector('.a2hs-btn');
                   let deferredPrompt;
+
                   window.addEventListener('beforeinstallprompt', function(e) {
                     alert('beforeinstallprompt');
                     e.preventDefault();
                     deferredPrompt = e;
 
-                    var add2hs = document.querySelector('.a2hs-btn');
                     add2hs.style.display = 'block';
 
                     add2hs.addEventListener('click', function() {
@@ -52,7 +53,11 @@
 
                   });
 
+                  add2hs.addEventListener('click', function() {
+                    alert('clicked the button!!!!!!!')
+                  });
 
+                  
                   window.addEventListener('fetch', function(event) {
                     alert('fetched: ' + event);
                   })
