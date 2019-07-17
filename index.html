@@ -14,14 +14,13 @@
     <script>
       // Check that service workers are supported
       if ('serviceWorker' in navigator) {
-        let deferredPrompt;
         navigator.serviceWorker.register('/sw.js', {
           scope: '.'
         })
                 .then((registration) => {
                   alert('Service worker registered:' + registration.scope);
                   var add2hs = document.querySelector('.a2hs-btn');
-
+                  let deferredPrompt;
                   window.addEventListener('beforeinstallprompt', function(e) {
                     alert('beforeinstallprompt');
                     e.preventDefault();
@@ -29,11 +28,28 @@
 
                     add2hs.style.display = 'block';
 
-                  });
+                    add2hs.addEventListener('click', function() {
+                      alert('clicked');
+                      add2hs.style.display = 'none';
+                      deferredPrompt.prompt().then(() => {
+                        console.log('Prompt shown')
+                      })
+                              .catch((error) => {
+                                console.log('Prompt error: ', error);
+                              });
 
-                  add2hs.addEventListener('click', function(event) {
-                    alert('clicked the button!!!!!!!');
-                    addToHomeScreen(event);
+                      deferredPrompt.userChoice
+                              .then((result) => {
+                                if(result.outcome === 'accepted') {
+                                  console.log('User accepted the prompt')
+                                }
+                                else {
+                                  console.log('User dismissed the prompt')
+                                }
+                                deferredPrompt = null;
+                              })
+                    });
+
                   });
 
 
@@ -44,15 +60,6 @@
                 .catch((error) => {
                   alert('Service worker failed:' + error);
                 });
-
-
-                function addToHomeScreen() {
-                  var add2hs = document.querySelector('.a2hs-btn');
-                }
-
-        window.addEventListener("onbeforeinstallprompt", function(event) {
-          alert('onbeforeinstallprompt' + event);
-        });
 
       }
     </script>
