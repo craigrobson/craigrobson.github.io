@@ -12,13 +12,13 @@ workbox.setConfig({ debug: true })
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
 workbox.routing.registerRoute(
     /^https:\/\/fonts\.googleapis\.com/,
-    workbox.strategies.staleWhileRevalidate({ cacheName: 'google-fonts-stylesheets' })
+    workbox.strategies.StaleWhileRevalidate({ cacheName: 'google-fonts-stylesheets' })
 )
 
 // Cache the underlying font files with a cache-first strategy for 1 year.
 workbox.routing.registerRoute(
     /^https:\/\/fonts\.gstatic\.com/,
-    workbox.strategies.cacheFirst({
+    workbox.strategies.CacheFirst({
         cacheName: 'google-fonts-webfonts',
         plugins  : [
             new workbox.cacheableResponse.Plugin({ statuses: [0, 200] }),
