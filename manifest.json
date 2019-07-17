@@ -1,0 +1,8 @@
+{
+  "name": "Progressive Web App",
+  "short_name": "PWA",
+  "theme_color": "#222121",
+  "background_color": "#222121",
+  "display": "standalone",
+  "start_url": "/"
+}
