@@ -11,12 +11,14 @@
     <script>
       // Check that service workers are supported
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('/sw.js', {
+          scope: '.'
+        })
                 .then((registration) => {
-                  console.log('Service worker registered', registration.scope);
+                  alert('Service worker registered:' + registration.scope);
                 })
                 .catch((error) => {
-                  console.log('Service worker failed', error);
+                  alert('Service worker failed:' + error);
                 });
 
         let deferredPrompt;
