@@ -31,9 +31,9 @@
 
                   });
 
-                  add2hs.addEventListener('click', function() {
+                  add2hs.addEventListener('click', function(event) {
                     alert('clicked the button!!!!!!!');
-                    deferredPrompt.prompt();
+                    addToHomeScreen(event);
                   });
 
 
@@ -49,7 +49,7 @@
                 function addToHomeScreen(event) {
                   event.preventDefault();
                   deferredPrompt = event;
-
+                  deferredPrompt.prompt();
                 }
 
       }
