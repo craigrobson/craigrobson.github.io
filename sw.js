@@ -7,7 +7,6 @@ if (workbox) {
 }
 
 workbox.setConfig({ debug: true })
-workbox.clientsClaim()
 
 // google stuff
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
