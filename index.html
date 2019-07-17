@@ -24,13 +24,28 @@
         right: 1rem;
         bottom: 0;
       }
+
+      .ios-prompt-close {
+        float: right;
+        margin: -14px -11px 0 0;
+        color: #000;
+      }
+
+      .ios-prompt-icon {
+        float: left;
+        height: 80px;
+        width: auto;
+        margin: -8px 1rem 0 0;
+      }
     </style>
   </head>
   <body>
 
   <button type="button" class="add2hsBtn" style="display: none;">Install Web App</button>
   <div class="ios-prompt">
-    You can install this app on your home screen. Press the icon and click "add to home screen"
+    <span class="ios-prompt-close">&times;</span>
+    <img src="icons/app-icon-96x96.png" class="ios-prompt-icon" />
+    To install this Web App in your iPhone/iPad press ... and then Add to Home Screen.
   </div>
 
 
